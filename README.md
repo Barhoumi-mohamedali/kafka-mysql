@@ -6,12 +6,21 @@ En utilisant le connecteur JDBC fourni par Kafka Connect, il est possible de con
 
 La connexion entre Kafka et MySQL via Kafka Connect est donc particulièrement utile pour les applications nécessitant une intégration en temps réel des données provenant d'une base de données relationnelle, ou pour les cas d'utilisation nécessitant un traitement distribué et parallèle des données, tels que la surveillance en temps réel, le traitement de flux, ou encore l'analyse de données.
 
-A. Présentation de Kafka Connect
+### A. Présentation de Kafka Connect :  <br />
 Kafka Connect est un outil open source de streaming de données qui permet de connecter facilement des sources de données externes à un cluster Apache Kafka. Il permet de transférer des données de manière fiable, scalable et efficace entre des systèmes hétérogènes, tels que des bases de données, des systèmes de fichiers, des applications ou des services web.
 ![image](https://github.com/Barhoumi-mohamedali/kafka-mysql/assets/1130140/7515d303-1e7e-4ee0-b83c-a97240053785)
+ <br />
+### B. Explication de la connexion entre Kafka et MySQL via Kafka Connect <br />
+Kafka Connect permet de connecter facilement des sources de données externes, telles que des bases de données, à un cluster Apache Kafka. Pour connecter MySQL à Kafka via Kafka Connect, on peut utiliser le connecteur JDBC (Java Database Connectivity).
 
-B. Explication de la connexion entre Kafka et MySQL via Kafka Connect
-C. Objectif du tutoriel
+Le connecteur JDBC permet de lire des données de MySQL en temps réel et de les écrire dans un topic Kafka spécifié. Le connecteur surveille les modifications apportées à la base de données MySQL en utilisant des journaux de transactions et écrit les modifications dans Kafka. Les données écrites dans Kafka sont structurées sous forme de messages JSON ou Avro, qui peuvent être traités par des applications Kafka pour effectuer des analyses en temps réel.
+
+La configuration du connecteur JDBC nécessite de spécifier les paramètres de connexion à la base de données MySQL, tels que l'URL de connexion, le nom d'utilisateur et le mot de passe. Il faut également spécifier le topic Kafka dans lequel écrire les données.
+
+Une fois le connecteur configuré et lancé, il permet de transférer des données de MySQL à Kafka en temps réel, de manière fiable et évolutive. Cette connexion entre Kafka et MySQL via Kafka Connect peut être utilisée pour une variété de cas d'utilisation, tels que l'ingestion de données en temps réel, la synchronisation de données entre différents systèmes et la diffusion de données à des applications en aval pour une analyse en temps réel.
+
+
+
 
 # II. Prérequis
 A. Installation de Kafka
